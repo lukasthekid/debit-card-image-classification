@@ -1,0 +1,2 @@
+debit card dataset: https://www.kaggle.com/datasets/denispotapov/creditdebit-card-numbers-detection?resource=download
+image dataset: https://www.kaggle.com/datasets/pavansanagapati/images-dataset

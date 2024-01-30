@@ -8,6 +8,12 @@ __pycache__/
 
 *.DS_STORE
 
+# exclude image data
+*.jpg
+*.jpeg
+*.png
+*.bmp
+
 # Distribution / packaging
 .Python
 build/
