@@ -1,0 +1,8 @@
+flask
+pathlib
+python-dotenv
+PyJWT
+numpy
+pandas
+matplotlib
+streamlit
