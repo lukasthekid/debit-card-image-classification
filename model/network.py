@@ -5,6 +5,7 @@ from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.applications import MobileNetV2
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.callbacks import EarlyStopping
 import pathlib
 import os
 import numpy as np
@@ -71,7 +72,7 @@ class CNN_v1:
         history = model.fit(
             self.train_ds,
             epochs=epochs,
-            validation_data=self.val_ds,
+            validation_data=self.val_ds
         )
         self.model = model
         return history
@@ -113,7 +114,7 @@ class MobileNetV2_debit_card:
         base_model = MobileNetV2(input_shape=(self.img_size, self.img_size, 3), include_top=False, weights='imagenet')
 
         base_model.trainable = False
-        # Create new model on top
+        # Create new model1 on top
         inputs = tf.keras.Input(shape=(self.img_size, self.img_size, 3))
         x = preprocess_input(inputs)
         x = base_model(x, training=False)
@@ -129,7 +130,7 @@ class MobileNetV2_debit_card:
         history = model.fit(
             self.train_ds,
             epochs=epochs,
-            validation_data=self.val_ds,
+            validation_data=self.val_ds
         )
         self.model = model
         return history
