@@ -10,3 +10,4 @@ flask-cors
 pathlib~=1.0.1
 matplotlib~=3.8.2
 numpy~=1.26.3
+gunicorn

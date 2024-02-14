@@ -41,10 +41,10 @@ response = api.model('Response', {
     'confidence': fields.Float()
 })
 
-ns = api.namespace('classification', description='Visual Classifier')
+ns = api.namespace('Recognition API', description='Visual Classifier', path="/api/recognitions")
 
 
-@ns.route('recognition/debit-card')
+@ns.route('/debit-card')
 class DebitCard(Resource):
     '''POST a base64 encoded picture string to get prediction of the Picture'''
 
@@ -73,7 +73,7 @@ class DebitCard(Resource):
             return {"accepted": bool(p == 0), "confidence": round(float(p_array[p]), 4)}, 200
 
         except Exception as e:
-            raise BadRequest(description=str(e))
+            raise BadRequest(description=str(e) + "(File probably not PNG or JPG)")
 
 
 if __name__ == '__main__':
